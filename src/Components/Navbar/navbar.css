@@ -1,0 +1,30 @@
+.navbar-logo{
+width: 200px;
+}
+#count{
+	font-size: 50% !important;
+    color: white !important;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: green;
+ 
+    text-align: center;
+ 
+
+    
+}
+.logout{  background-color:transparent!important ;}
+button {
+    border: none;
+  
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+button:focus{
+    outline:none !important;
+}
