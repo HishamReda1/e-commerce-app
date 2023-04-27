@@ -33,14 +33,19 @@ const Navbar = ({removeUser,userdata}) => {
       
       </ul>
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
-    {userdata?<> <li className="nav-item">
+    {userdata?<>
     <li className="nav-item">
           <Link className="nav-link " to="/allOrders">allOrders</Link>
         </li>
-          <Link  className="nav-link t" to="/Cart"><i class="fa-solid fa-cart-shopping fa-xl pt-2 text-primary position-relative d-flex"></i> </Link>
+
+ <li className="nav-item">
+
+          <Link  className="nav-link " to="/Cart"><i class="fa-solid fa-cart-shopping fa-xl pt-2 text-primary position-relative d-flex"></i> </Link>
         </li> 
-        <Link className="nav-link " to="wishlist">Wishlist</Link>
         
+ <li className="nav-item">
+        <Link className="nav-link " to="wishlist">Wishlist</Link>
+        </li>
         <li className="nav-item">
           <button onClick={removeUser } className="nav-link logout" >Logout</button>
         </li></>:<><li className="nav-item ">
