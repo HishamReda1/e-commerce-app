@@ -33,6 +33,7 @@ const Register = () => {
     } catch (error) {
         console.log(error.response.data.errors.msg);
         $('.errMsg').fadeIn(500)
+        $('.errMsg').text( error.response.data.errors.msg);
     }
      }
     
@@ -82,7 +83,7 @@ const Register = () => {
             <div className="container mt-5 py-5">
               <form  className='py-2' action="" onSubmit={formik.handleSubmit}>
                 <h2>Registeration form</h2>
-                <div style={{display:'none',alignItems:'center'}} className="errMsg alert alert-danger text-center">Email already in use</div>
+                <div style={{display:'none',alignItems:'center'}} className="errMsg alert alert-danger text-center"></div>
                 <div style={{display:'none',alignItems:'center'}} className="sucMsg alert alert-success text-center">Congratulations!</div>
 
                
