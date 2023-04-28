@@ -1,6 +1,6 @@
 import notFound from '../src/images/404.svg'
 import toast, { Toaster } from 'react-hot-toast';
-import { Navigate, RouterProvider } from 'react-router';
+import { Navigate, Router, RouterProvider } from 'react-router';
 import { createBrowserRouter, createHashRouter } from 'react-router-dom';
 import './App.css';
 import Login from './Components/Login/Login';
@@ -111,6 +111,7 @@ if (confirm) {
   )
   return (
     <>
+    
     <div>
     <Desktop>Desktop or laptop</Desktop>
     <Tablet>Tablet</Tablet>
@@ -119,7 +120,7 @@ if (confirm) {
   </div>
     <Offline><div className="network"> Sorry, you are offline </div> </Offline>
       <Toaster />
-      <RouterProvider router={router} />
+      <RouterProvider basename='/ecommerce' router={router} />
 
     </>
   );
