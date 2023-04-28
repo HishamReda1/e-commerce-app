@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { cartContext } from '../../Context/CartContext';
 import { useNavigate, useParams } from 'react-router';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
@@ -7,8 +7,15 @@ import { Helmet } from 'react-helmet';
 
 const Payment = () => {
    const navigate= useNavigate()
-   const {cartId} = useContext(cartContext);
+   const {cartId,getCart} = useContext(cartContext);
 
+   useEffect(() => {
+    getCart()
+   
+    return () => {
+
+    };
+}, []);
     async function confirmCash() {
         try {
             const {data}=await axios.post(`https://route-ecommerce.onrender.com/api/v1/orders/${cartId}`,{

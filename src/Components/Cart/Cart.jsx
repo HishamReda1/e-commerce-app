@@ -4,12 +4,30 @@ import { cartContext } from '../../Context/CartContext';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { useNavigate } from 'react-router';
 import { Helmet } from 'react-helmet';
+import { useEffect } from 'react';
 
 
 const Cart = () => {
+
 const navigate = useNavigate()
-    const { numberOfCart, totalCartPrice, cartProducts, removeProduct, updateProductCount } = useContext(cartContext);
+    const { getCart,numberOfCart, totalCartPrice, cartProducts, removeProduct, updateProductCount } = useContext(cartContext);
     console.log(cartProducts);
+
+    useEffect(() => {
+        getCart()
+       
+        return () => {
+
+        };
+    }, []);
+
+
+
+
+
+
+
+
     return (
         <>
             <Helmet>

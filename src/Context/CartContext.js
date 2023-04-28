@@ -190,17 +190,11 @@ const CartContext = ({ children }, { userdata }) => {
         }
 
     }
-    useEffect(() => {
-        getCart()
-       
-        return () => {
 
-        };
-    }, []);
 
 
     return (
-        <cartContext.Provider value={{ addProduct, cartId, numberOfCart, totalCartPrice, cartProducts, removeProduct, updateProductCount, addProductwishlist, getwishlist, wishlistProducts, wishlistCount, removeProductwishlist,getwishlist }}>
+        <cartContext.Provider value={{ addProduct, cartId, numberOfCart, totalCartPrice, cartProducts, removeProduct, updateProductCount, addProductwishlist, getwishlist, wishlistProducts, wishlistCount, removeProductwishlist,getwishlist,getCart }}>
             {children}
         </cartContext.Provider>
     );
