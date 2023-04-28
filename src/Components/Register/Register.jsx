@@ -57,12 +57,13 @@ const Register = () => {
         if (!values.email) {
             errors.email = 'Required';
           }
-           else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+           else if (!/^(?!.{51})([a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)$/i.test(values.email)) {
             errors.email = 'Invalid email address';
           }
-        if (values.password.length<6 &&values.password.length>12 ) {
-            errors.password= 'Password must be more than 6 charachters and less than 12 ';
+        if ((!/^(?=.*[A-Za-z]{3})(?=.*\d)[A-Za-z\d]{6,12}$/i.test(values.password)) ) { 
+            errors.password= 'Password must be more than 6 charachters and less than 12 and contain 3 characters at least ';
         }
+      
         if (values.password!=values.rePassword) {
             errors.rePassword= 'Password is not matched ';
         }
@@ -83,7 +84,7 @@ const Register = () => {
             <div className="container mt-5 py-5">
               <form  className='py-2' action="" onSubmit={formik.handleSubmit}>
                 <h2>Registeration form</h2>
-                <div style={{display:'none',alignItems:'center'}} className="errMsg alert alert-danger text-center"></div>
+                <div style={{display:'none',alignItems:'center'}} className="errMsg alert alert-danger text-center">Email already in use.</div>
                 <div style={{display:'none',alignItems:'center'}} className="sucMsg alert alert-success text-center">Congratulations!</div>
 
                
