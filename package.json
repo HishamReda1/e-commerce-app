@@ -1,8 +1,7 @@
 {
-  "homepage": "https://hishamreda1.github.io/ecommerce/",
+  "homepage": "https://Hishamreda1.github.io/ecommerce",
   "version": "0.1.0",
   "private": true,
-  
   "dependencies": {
     "@anatoliygatt/heart-switch": "^1.0.13",
     "@emotion/react": "^11.10.6",
@@ -25,6 +24,7 @@
     "react-helmet": "^6.1.0",
     "react-hot-toast": "^2.4.0",
     "react-owl-carousel": "^2.3.3",
+    "react-responsive": "^9.0.2",
     "react-router": "^6.10.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
@@ -35,7 +35,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-  "deploy": "main -d build",
+  "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
