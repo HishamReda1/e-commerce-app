@@ -23,8 +23,32 @@ import { Offline, Online } from 'react-detect-offline';
 import Wishlist from './Components/Wishlist/Wishlist';
 import Verify from './Components/Login/Verify';
 import UpdatePassword from './Components/Login/updatePassword';
+import { useMediaQuery } from 'react-responsive';
+
 
 function App() {
+
+
+const Desktop = ({ children }) => {
+  const isDesktop = useMediaQuery({ minWidth: 992 })
+  return isDesktop ? children : null
+}
+const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
+  return isTablet ? children : null
+}
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+  return isMobile ? children : null
+}
+const Default = ({ children }) => {
+  const isNotMobile = useMediaQuery({ minWidth: 768 })
+  return isNotMobile ? children : null
+}
+
+
+ 
+
 
   const [userdata, setuserData] = useState(null);
   function saveUser() {
@@ -87,7 +111,12 @@ if (confirm) {
   )
   return (
     <>
-   
+    <div>
+    <Desktop>Desktop or laptop</Desktop>
+    <Tablet>Tablet</Tablet>
+    <Mobile>Mobile</Mobile>
+    <Default>Not mobile (desktop or laptop or tablet)</Default>
+  </div>
     <Offline><div className="network"> Sorry, you are offline </div> </Offline>
       <Toaster />
       <RouterProvider router={router} />

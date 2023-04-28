@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <>
               <footer className='bg-light mt-5 pb-5'>
-            <h2 className='ms-2 pt-3'>Get the FreshCart App</h2>
+            <h2 className='ms-2 pt-2'>Get the FreshCart App</h2>
             
              <p className='ms-2'>We will send you a link ,open it on your phone to download the app</p>
 <div className="container d-flex justify-content-between"> 
