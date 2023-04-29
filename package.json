@@ -1,7 +1,7 @@
 {
   "homepage": "https://hishamreda1.github.io/ecommerce",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@anatoliygatt/heart-switch": "^1.0.13",
     "@emotion/react": "^11.10.6",
