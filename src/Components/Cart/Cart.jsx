@@ -15,6 +15,7 @@ const navigate = useNavigate()
 
     useEffect(() => {
         getCart()
+       console.log(numberOfCart); 
        
         return () => {
 

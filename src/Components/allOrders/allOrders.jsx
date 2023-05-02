@@ -4,7 +4,7 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { Helmet } from 'react-helmet';
 
 const AllOrders = ({ userdata }) => {
-    const [allOrders, setallOrders] = useState(null);
+    const [allOrders, setallOrders] = useState([]);
     async function getAllorders() {
         try {
 

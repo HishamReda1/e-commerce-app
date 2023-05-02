@@ -24,14 +24,19 @@ const CartContext = ({ children }, { userdata }) => {
                 settotalCartPrice(data.data.totalCartPrice)
                 setcartProducts(data.data.products)
                 setcartId(data.data._id)
-                console.log(data.data._id);
+               
             }
         } catch (error) {
             if (error.response.status == 404) {
-                toast.error('No cart exist for this user');
+                $('.errMsgCart').fadeIn(500)
+               
+              
+                   
+                
                 navigate('/home')
+                
             }
-
+            
             console.log(error);
         }
 
@@ -56,7 +61,11 @@ const CartContext = ({ children }, { userdata }) => {
                 toast.success(data.message);
                 $('#btnS').fadeOut(500)
                 $('#btnE').fadeIn(500)
-                return true
+                setnumberOfCart(data.numOfCartItems) 
+                setcartId(data.data._id)
+                setcartProducts(data.data.products)
+                console.log(data.numOfCartItems);
+              getCart()
             }
 
         }
@@ -84,6 +93,7 @@ const CartContext = ({ children }, { userdata }) => {
                 toast.error("Product removed successfully from your cart");
                 $('#btnS').fadeIn(500)
                 $('#btnE').fadeOut(500)
+                getCart()
 
             }
         } catch (error) {
@@ -121,7 +131,7 @@ const CartContext = ({ children }, { userdata }) => {
                 headers: { 'token': localStorage.getItem('tkn') }
             })
             if (data.status === 'success') {
-                setwishlistCount(data.count)
+                setwishlistCount(data.data.length)
                 setwishlistProducts(data.data)
 
 
@@ -154,6 +164,9 @@ const CartContext = ({ children }, { userdata }) => {
                 toast.success(data.message);
                 $('#loveS').fadeOut(500)
                 $('#loveE').fadeIn(500)
+                getwishlist()
+                setwishlistCount(data.data.length)
+                console.log(data.data.length)
 
 
             }
@@ -177,8 +190,9 @@ const CartContext = ({ children }, { userdata }) => {
             )
             console.log(data);
             if (data.status == 'success' && userdata !== null) {
-                setwishlistCount(data.count)
+                
                 setwishlistProducts(data.data)
+                setwishlistCount(data.data.length)
                 getwishlist()
                 toast.error("Product removed successfully from your wishlist");
                 $('#loveS').fadeIn(500)
@@ -191,6 +205,16 @@ const CartContext = ({ children }, { userdata }) => {
 
     }
 
+    useEffect(() => {
+        getCart()
+        getwishlist()
+      
+       console.log(numberOfCart); 
+       
+        return () => {
+
+        };
+    }, []);
 
 
     return (

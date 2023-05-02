@@ -87,9 +87,7 @@ const Login = ({saveUser, userdata}) => {
            else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
             errors.email = 'Invalid email address';
           }
-        if (values.password.length<6 &&values.password.length>12 ) {
-            errors.password= 'Password must be more than 6 charachters and less than 12 ';
-        }
+        
       
         return errors
 
@@ -122,7 +120,7 @@ const Login = ({saveUser, userdata}) => {
               <button className='btn btn-outline-primary mt-4 mx-3' type='submit ' onClick={()=>{navigate('/Register')}}>Register</button>
             <div className="mt-3">
                  <Link className='text-center ' onClick={()=>{forgetPassword()} }>
-                 Do you forget your password?
+                 Did you forget your password?
                 </Link>
             </div>
               </form>

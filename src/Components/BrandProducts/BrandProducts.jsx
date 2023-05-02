@@ -46,7 +46,7 @@ const BrandProducts = () => {
                                     <img className=' w-100' src={Brand.imageCover} alt="" />
                                     <h5 className=' text-dark'>{Brand.title.slice(0, Brand.title.indexOf(' ', 20))}</h5>
                                     <h6 className='text-primary' >{Brand.category.name}</h6>
-                                    <h6 className='pt-2 text-dark'>Price:{Brand.priceAfterDiscount ? <><span className='text-decoration-line-through'>{Brand.priceAfterDiscount}</span><span className='px-2'>{Brand.price}</span></> : <span>{Brand.price}</span>}</h6>
+                                    <h6 className='pt-2 text-dark'>Price:{Brand.priceAfterDiscount ? <><span className=''>{Brand.priceAfterDiscount}</span><span className='px-2 text-decoration-line-through'>{Brand.price}</span></> : <span>{Brand.price}</span>}</h6>
                                 </div>
                             </Link>
                         </div>

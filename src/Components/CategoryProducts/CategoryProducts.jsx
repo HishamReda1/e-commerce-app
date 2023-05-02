@@ -46,7 +46,7 @@ const CategoryProducts = () => {
                                     <img className=' w-100 rounded-5 w-100' src={data.imageCover} alt="" />
                                     <h5 className=' text-dark'>{data.title.slice(0, data.title.indexOf(' ', 20))}</h5>
                                     <h6 className='text-primary' >{data.category.name}</h6>
-                                    <h6 className='pt-2 text-dark'>Price:{data.priceAfterDiscount ? <><span className='text-decoration-line-through'>{data.priceAfterDiscount}</span><span className='px-2'>{data.price}</span></> : <span>{data.price}</span>}</h6>
+                                    <h6 className='pt-2 text-dark'>Price:{data.priceAfterDiscount ? <><span className=''>{data.priceAfterDiscount}</span><span className='px-2 text-decoration-line-through'>{data.price}</span></> : <span>{data.price}</span>}</h6>
                                     </div>
                                 </div>
                             </Link>

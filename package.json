@@ -1,7 +1,7 @@
 {
-  "homepage": "https://hishamreda1.github.io/ecommerce",
+  "homepage":"https://HishamReda1.github.io/e-commerce-app",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "dependencies": {
     "@anatoliygatt/heart-switch": "^1.0.13",
     "@emotion/react": "^11.10.6",

@@ -1,6 +1,6 @@
 import axios, { Axios } from 'axios';
 import { useFormik } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 import $ from 'jquery'
 import { useNavigate } from 'react-router';
 import { Helmet } from 'react-helmet';
@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 const Register = () => {
 
 
+    const [loading, setloading] = useState(false);
     let user ={
     name:'',
     email:'',
@@ -25,8 +26,10 @@ const Register = () => {
             let {data}= await axios.post('https://route-ecommerce.onrender.com/api/v1/auth/signup',obj)
             console.log(data);
            if (data.message=='success') {
+            setloading(false)
             $('.sucMsg').fadeIn(500,function () {
                 navigate('/Login')
+
             })
            } 
           
@@ -34,6 +37,7 @@ const Register = () => {
         console.log(error.response.data.errors.msg);
         $('.errMsg').fadeIn(500)
         $('.errMsg').text( error.response.data.errors.msg);
+        setloading(false)
     }
      }
     
@@ -105,10 +109,10 @@ const Register = () => {
                  {formik.errors.password && formik.touched.password?<div className="alert alert-danger text-center">{formik.errors.password}</div>:''}
 
                  <label className='mt-3' htmlFor="rePassword">     rePassword</label>
-                 <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.rePassword} className='form-control' id='rePassword' type="password" placeholder='rePassword' />
+                 <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.rePassword} className='form-control' id='rePassword' type="password" placeholder='Re-enter your Password' />
                  {formik.errors.rePassword && formik.touched.rePassword?<div className="alert alert-danger text-center">{formik.errors.rePassword}</div>:''}
 
-              <button className='btn btn-outline-primary mt-4' type='submit'> Register</button>
+                 <button disabled={!formik.isValid &&!formik.dirty} className='btn btn-primary mt-4' onClick={()=>setloading(true)} type='submit'> {!loading?'Submit':<><i className="fa fa-spinner fa-spin text-white"></i></>}</button>
 
 
 

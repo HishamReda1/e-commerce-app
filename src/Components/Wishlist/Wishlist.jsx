@@ -12,6 +12,7 @@ const Wishlist = () => {
     const { wishlistProducts, wishlistCount, removeProductwishlist,getwishlist,addProduct,removeProduct } = useContext(cartContext);
     useEffect(() => {
         getwishlist()
+        
         return () => {
             
         };

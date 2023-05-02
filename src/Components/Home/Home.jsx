@@ -33,7 +33,7 @@ const Home = () => {
                 <title>Home</title>
                
             </Helmet>
-
+            <div style={{display:'none',alignItems:'center'}} className="errMsgCart alert alert-danger text-center pt-5">There is no cart for you</div>
       <div className='mt-5 pt-3' >
       <div className="App">  
       <Owldemo1/> 
@@ -56,7 +56,7 @@ const Home = () => {
                     <img className=' w-100 rounded-5' src={pro.imageCover} alt="" />
                     <h5 className='  text-dark'>{pro.title.slice(0, pro.title.indexOf(' ', 20))}</h5>
                     <h6 className='text-primary' >{pro.category.name}</h6>
-                    <h6 className='pt-2 text-dark'>Price:{pro.priceAfterDiscount ? <><span className='text-decoration-line-through'>{pro.priceAfterDiscount}</span><span className='px-2'>{pro.price}</span></> : <span>{pro.price}</span>}</h6>
+                    <h6 className='pt-2 text-dark'>Price:{pro.priceAfterDiscount ? <><span className=''>{pro.priceAfterDiscount}</span><span className='px-2 text-decoration-line-through'>{pro.price}</span></> : <span>{pro.price}</span>}</h6>
                   </div>
                  
                   

@@ -3,11 +3,12 @@ import { Link, Navigate } from 'react-router-dom';
 import "./navbar.css"
 import logo from '../../images/logo.svg'
 import { cartContext } from '../../Context/CartContext';
-import { useEffect } from 'react';
+
 
 const Navbar = ({removeUser,userdata}) => {
-  const { numberOfCart} = useContext(cartContext);
- 
+  const { numberOfCart,wishlistCount} = useContext(cartContext);
+
+
     return (
         <>
 <nav className="navbar navbar-expand-lg fw-bolder fixed-top bg-light  ">
@@ -40,11 +41,11 @@ const Navbar = ({removeUser,userdata}) => {
 
  <li className="nav-item">
 
-          <Link  className="nav-link " to="/Cart"><i class="fa-solid fa-cart-shopping fa-xl pt-2 text-primary position-relative d-flex"></i> </Link>
+          <Link  className="nav-link " to="/Cart"><i class="fa-solid fa-cart-shopping fa-xl pt-2 text-primary position-relative d-flex"><div className="notback "><span  className='position-absolute not'>{numberOfCart}</span></div> </i> </Link>
         </li> 
         
  <li className="nav-item">
-        <Link className="nav-link " to="wishlist">Wishlist</Link>
+        <Link className="nav-link  position-relative d-flex" to="wishlist"><i className='fa-solid fa-heart fa-xl pt-2 text-danger'></i><div className='pt-2'><div className=" end-0  notback  "><span  className='position-absolute not '>{wishlistCount}</span></div></div> </Link>
         </li>
         <li className="nav-item">
           <button onClick={removeUser } className="nav-link logout" >Logout</button>
