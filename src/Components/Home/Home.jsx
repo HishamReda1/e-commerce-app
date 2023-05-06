@@ -4,6 +4,7 @@ import LoadingScreen from './../LoadingScreen/LoadingScreen';
 import { Link } from 'react-router-dom';
 import Owldemo1 from './../Owldemo1/Owldemo1';
 import { Helmet } from 'react-helmet';
+import CategorySlider from '../CategorySlider/CategorySlider';
 const Home = () => {
   const [allProducts, setallProducts] = useState(null);
   async function getAllProducts() {
@@ -41,11 +42,13 @@ const Home = () => {
     </div>  
     
       </div>
-      <div className="container pt-5 mt-5">
-        <h2>Shop popular categories</h2>
+      <div className="container py-3 mt-5">
+        <CategorySlider/>
+        <h2 className='py-3'>Shop popular products</h2>
         <div className="row">
 
           {allProducts ? allProducts.map(function (pro, idx) {
+            
             return <>
               <div  key={idx} className="col-md-2 m-3 proCard" >
                 <Link to={`/ProDetails/${pro.id}`}>
@@ -56,7 +59,7 @@ const Home = () => {
                     <img className=' w-100 rounded-5' src={pro.imageCover} alt="" />
                     <h5 className='  text-dark'>{pro.title.slice(0, pro.title.indexOf(' ', 20))}</h5>
                     <h6 className='text-primary' >{pro.category.name}</h6>
-                    <h6 className='pt-2 text-dark'>Price:{pro.priceAfterDiscount ? <><span className=''>{pro.priceAfterDiscount}</span><span className='px-2 text-decoration-line-through'>{pro.price}</span></> : <span>{pro.price}</span>}</h6>
+                    <h6 className='pt-2 text-dark'>Price:{pro.priceAfterDiscount ? <><span className=''>{pro.priceAfterDiscount}</span><span className='px-2 text-decoration-line-through text-danger'>{pro.price}</span></> : <span>{pro.price}</span>}</h6>
                   </div>
                  
                   

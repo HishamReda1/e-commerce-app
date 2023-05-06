@@ -18,16 +18,16 @@ const Navbar = ({removeUser,userdata}) => {
       <span className="navbar-toggler-icon"></span>
     </button>    <div className="collapse navbar-collapse " id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-      <li className="nav-logo ">
-       <img className='navbar-logo' src={ logo} alt="navlogo" />
+      <li className="nav-item ">
+      <Link className="nav-link " to="/Home"><img className='navbar-logo' src={ logo} alt="navlogo" /></Link>
         </li>
-        <li className="nav-item ">
+        <li className="nav-item py-2">
           <Link className="nav-link " to="/Home">Home</Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item py-2">
           <Link className="nav-link " to="/Brands">Brands</Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item py-2">
           <Link className="nav-link " to="/categories">Categories</Link>
         </li>
       

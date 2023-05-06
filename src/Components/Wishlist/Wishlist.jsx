@@ -37,7 +37,7 @@ const Wishlist = () => {
                         {wishlistCount == 0?<div><h4 >There is no products in your wishlist </h4></div>  : <><div className="product py-3">
                             <div className='col-md-3'><img src={pro.imageCover} className='w-100' alt="" /></div>
 
-                            <div className="col-md-9 "> <h2 >title:{pro.title}</h2>
+                            <div className="col-md-9 "> <h2 >{pro.title}</h2>
 
                                 <h5>Price: <span className='text-primary'>{pro.price}</span> EGP</h5>
 

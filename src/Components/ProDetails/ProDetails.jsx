@@ -7,10 +7,20 @@ import { useParams } from 'react-router';
 import { useContext } from 'react';
 import { cartContext } from '../../Context/CartContext';
 import { Helmet } from 'react-helmet';
+import Slider from 'react-slick';
+
 
 
 
 const ProDetails = ( ) => {
+
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      };  
     const { addProductwishlist,removeProductwishlist } = useContext(cartContext);
    
     const { addProduct,removeProduct} = useContext(cartContext);
@@ -38,7 +48,9 @@ const ProDetails = ( ) => {
             <div className="container "><h2 className='py-5 mt-5 animate__animated animate__fadeInDown text-primary'>Product details</h2>
                 {product?<>   <div className="row">
                     <div className="col-md-3">
-                        <img className='w-100 animate__animated animate__fadeInLeft animate__delay-1s '  src={product.imageCover} alt="proImg" />
+                    <Slider {...settings}>
+        {product.images.map(function(img,idx){return <img key={idx} src={img} className='w-100 col-md-9 pt-3 animate__animated animate__fadeInLeft animate__delay-2s ' alt={product.title}/>})}
+      </Slider>
                     </div>
                     <div className="col-md-9 pt-3 animate__animated animate__fadeInRight animate__delay-2s">
                         <h2 className=''>{product.title}</h2>

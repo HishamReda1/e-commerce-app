@@ -24,7 +24,8 @@ import Wishlist from './Components/Wishlist/Wishlist';
 import Verify from './Components/Login/Verify';
 import UpdatePassword from './Components/Login/updatePassword';
 import { useMediaQuery } from 'react-responsive';
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
 

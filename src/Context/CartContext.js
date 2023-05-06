@@ -64,8 +64,9 @@ const CartContext = ({ children }, { userdata }) => {
                 setnumberOfCart(data.numOfCartItems) 
                 setcartId(data.data._id)
                 setcartProducts(data.data.products)
+                getCart()
                 console.log(data.numOfCartItems);
-              getCart()
+              
             }
 
         }
@@ -90,10 +91,11 @@ const CartContext = ({ children }, { userdata }) => {
                 setnumberOfCart(data.numOfCartItems)
                 settotalCartPrice(data.data.totalCartPrice)
                 setcartProducts(data.data.products)
+                 getCart()
                 toast.error("Product removed successfully from your cart");
                 $('#btnS').fadeIn(500)
                 $('#btnE').fadeOut(500)
-                getCart()
+               
 
             }
         } catch (error) {
@@ -164,9 +166,10 @@ const CartContext = ({ children }, { userdata }) => {
                 toast.success(data.message);
                 $('#loveS').fadeOut(500)
                 $('#loveE').fadeIn(500)
-                getwishlist()
+               
                 setwishlistCount(data.data.length)
-                console.log(data.data.length)
+                getwishlist()
+                 console.log(data.data.length)
 
 
             }
@@ -205,16 +208,13 @@ const CartContext = ({ children }, { userdata }) => {
 
     }
 
-    useEffect(() => {
-        getCart()
-        getwishlist()
+    useEffect(function(){
+        getwishlist();
+      },[])
       
-       console.log(numberOfCart); 
-       
-        return () => {
-
-        };
-    }, []);
+      useEffect(function(){
+        getCart();
+      },[])
 
 
     return (

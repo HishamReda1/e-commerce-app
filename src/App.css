@@ -39,3 +39,6 @@
 body{
   background-image: url('../src/images/light-patten.svg');
 }
+i{
+  cursor: pointer;
+}

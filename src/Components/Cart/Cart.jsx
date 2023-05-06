@@ -52,7 +52,7 @@ const navigate = useNavigate()
                         <div className="product py-3">
                             <div className='col-md-3'><img src={pro.product.imageCover} className='w-100' alt="" /></div>
                             
-                            <div className="col-md-9 "> <h2 >title:{pro.product.title}</h2>
+                            <div className="col-md-9 "> <h2 >{pro.product.title}</h2>
 
                                 <h5>Price: <span className='text-primary'>{pro.price}</span> EGP</h5>
                                 <h5>Count:{pro.count}</h5>

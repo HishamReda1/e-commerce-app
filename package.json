@@ -1,5 +1,5 @@
 {
-  "homepage":"https://HishamReda1.github.io/e-commerce-app",
+  "homepage": "https://HishamReda1.github.io/e-commerce-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -31,11 +31,12 @@
     "react-slick": "^0.29.0",
     "react-zlib-js": "^1.0.5",
     "redux": "^4.2.1",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
