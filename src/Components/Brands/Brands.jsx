@@ -11,7 +11,7 @@ const Brands = () => {
 
     async function getBrands() {
         try {
-            const { data } = await axios.get('https://route-ecommerce.onrender.com/api/v1/brands')
+            const { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/brands')
             setallbrands(data.data)
 
         } catch (error) {
