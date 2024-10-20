@@ -12,7 +12,7 @@ const Login = ({saveUser, userdata}) => {
  
     async function forgetPassword() {
         try {
-            const { data } = await axios.post(`https://route-ecommerce.onrender.com/api/v1/auth/forgotPasswords`,{'email':document.querySelector("#email").value})
+            const { data } = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`,{'email':document.querySelector("#email").value})
            if (data.statusMsg=='success') {
             $('#resetS').fadeIn(500)
             navigate('/verify')
