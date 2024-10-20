@@ -13,7 +13,7 @@ const BrandProducts = () => {
     const [Brands, setBrands] = useState(null);
     async function getBrands() {
         try {
-            const { data } = await axios.get(`https://route-ecommerce.onrender.com/api/v1/products`, {
+            const { data } = await axios.get(`https://ecommerce.routemisr.com/api/v1/products`, {
                 params: { 'brand': id }
 
 
