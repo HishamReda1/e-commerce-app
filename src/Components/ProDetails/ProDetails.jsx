@@ -28,7 +28,7 @@ const ProDetails = ( ) => {
     const [product, setproduct] = useState(null);
     async function getProduct() {
         try {
-            const { data } = await axios.get(`https://route-ecommerce.onrender.com/api/v1/products/${id}`)
+            const { data } = await axios.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`)
             setproduct(data.data)
         } catch (error) {
             console.log(error);
