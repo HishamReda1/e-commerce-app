@@ -9,7 +9,7 @@ const AllOrders = ({ userdata }) => {
         try {
 
 
-            const { data } = await axios.get(`https://route-ecommerce.onrender.com/api/v1/orders/user/${userdata.id}`)
+            const { data } = await axios.get(`https://ecommerce.routemisr.com/api/v1/orders/user/${userdata.id}`)
 setallOrders(data)
         
         } catch (error) {
