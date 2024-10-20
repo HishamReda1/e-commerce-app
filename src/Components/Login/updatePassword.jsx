@@ -42,7 +42,7 @@ const UpdatePassword = () => {
     const navigate = useNavigate()
     async function updatePassword() {
         try {
-            const { data } = await axios.put(`https://route-ecommerce.onrender.com/api/v1/auth/resetPassword`,{
+            const { data } = await axios.put(`https://ecommerce.routemisr.com/api/v1/auth/resetPassword`,{
                 "email":document.querySelector('#email').value,
                 "newPassword": document.querySelector('#newPassword').value
           })
