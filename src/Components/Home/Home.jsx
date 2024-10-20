@@ -9,7 +9,7 @@ const Home = () => {
   const [allProducts, setallProducts] = useState(null);
   async function getAllProducts() {
     try {
-      let { data } = await axios.get('https://route-ecommerce.onrender.com/api/v1/products')
+      let { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/products')
       setallProducts(data.data)
     }
     catch (error) {
