@@ -22,8 +22,7 @@ const Register = () => {
        
        
     try {
-     
-            let {data}= await axios.post('https://route-ecommerce.onrender.com/api/v1/auth/signup',obj)
+            let {data}= await axios.post('https://ecommerce.routemisr.com/api/v1/auth/signup',obj)
             console.log(data);
            if (data.message=='success') {
             setloading(false)
