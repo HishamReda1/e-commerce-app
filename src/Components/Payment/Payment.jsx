@@ -18,7 +18,7 @@ const Payment = () => {
 }, []);
     async function confirmCash() {
         try {
-            const {data}=await axios.post(`https://route-ecommerce.onrender.com/api/v1/orders/${cartId}`,{
+            const {data}=await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/${cartId}`,{
                 "shippingAddress":{
                     "details":document.querySelector("#addDetails").value,
                     "phone": document.querySelector("#phoneN").value,
