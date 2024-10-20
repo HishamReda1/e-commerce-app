@@ -6,7 +6,7 @@ const Verify = () => {
     const navigate = useNavigate()
     async function verifyPassword() {
         try {
-            const { data } = await axios.post(`https://route-ecommerce.onrender.com/api/v1/auth/verifyResetCode`,{"resetCode":document.querySelector("#resetCode").value})
+            const { data } = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/verifyResetCode`,{"resetCode":document.querySelector("#resetCode").value})
            if (data.status=='Success') {
             $('#verifyS').fadeIn(500)
             navigate('/updatePassword')
