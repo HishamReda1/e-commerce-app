@@ -12,7 +12,7 @@ const Categories = () => {
 
     async function getCategories() {
         try {
-            const { data } = await axios.get('https://route-ecommerce.onrender.com/api/v1/categories')
+            const { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/categories')
             setallCategory(data.data)
 
         } catch (error) {
