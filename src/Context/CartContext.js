@@ -15,7 +15,7 @@ const CartContext = ({ children }, { userdata }) => {
     const [wishlistProducts, setwishlistProducts] = useState(null);
     async function getCart() {
         try {
-            const { data } = await axios.get('https://route-ecommerce.onrender.com/api/v1/cart', {
+            const { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/cart', {
 
                 headers: { 'token': localStorage.getItem('tkn') }
             })
